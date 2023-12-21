@@ -43,11 +43,11 @@
   --bold:700;
   --regular:400;
 
-  --h1FontSize:24rem;
-  --h2FontSize:18rem;
-  --h3FontSize:16rem;
-  --textFontSize:14rem;
-  --quotesFontSize:12rem;
+  --h1FontSize:24px;
+  --h2FontSize:18px;
+  --h3FontSize:16px;
+  --textFontSize:14px;
+  --quotesFontSize:12px;
 
 }
 * {
@@ -84,8 +84,9 @@ header {
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-  color: var(--white);
 
+  font-size: var(--h1FontSize);
+  color: var(--white);
 }
 
 /* Icons */
@@ -96,5 +97,25 @@ header {
 .icon-container svg {
   width: 100%;
   height: 100%;
+}
+
+/* Background */
+.background {
+  width: 100%;
+  height: 100%;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--white);
+}
+.background--image {
+  width: 160px;
+  height: 160px;
+}
+.background > p {
+  text-align: center;
 }
 
