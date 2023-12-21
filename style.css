@@ -1,0 +1,64 @@
+/* 
+1. Posicionamiento
+2. Modelo (box model)
+3. Tipografía
+4. Visuales
+5. Otros
+*/
+
+:root {
+  /* Main Colors */
+  --main1:#265073;
+  --main2:#2D9596;
+  --main3:#9AD0C2;
+  --main4:#ECF4D6;
+
+  /* Black&Withe */
+  --black:#000000;
+  --gray1:#343434;
+  --gray2:#484848;
+  --gray3:#6C6C6C;
+  --gray4:#909090;
+  --gray5:#B4B4B4;
+  --gray6:#D8D8D8;
+  --white:#ffffff;
+
+  /* Color-notes */
+  --colorNotes1:#F06159;
+  --colorNotes2:#FF86C7;
+  --colorNotes3:#FFAC64;
+  --colorNotes4:#E9C755;
+  --colorNotes5:#67A74B;
+  --colorNotes6:#5A9798;
+  --colorNotes7:#2D73A8;
+  --colorNotes8:#9584FF;
+
+  /* States */
+  --stateError:#EA1510;
+  --stateWarning:#F6C400;
+  --stateSuccess:#8DC120;
+  --stateInformation:#006CDD;
+
+
+  --size-700:700;
+  --size-400:400;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+  /*font-family: 'Lato', sans-serif;
+  font-family: 'Titan One', sans-serif;*/
+}
+
+/* HEADER */
+header {
+  width: 360px;
+  height: 45px;
+  flex-shrink: 0;
+  background-color: var(--background);
+}
