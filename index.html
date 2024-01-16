@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/Tudu/favicon.ico">
   <link rel="stylesheet" href="/Tudu/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,14 +42,47 @@
 
   <section>
       <div class="card">
-          <h2>Tareas del hogar</h2>
+        <div class="card--header">
+          <div class="card--title">
+            <h2>Tareas del hogar</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+              <path d="M5.99927 9.53424L11.9993 15.5342L17.9993 9.53424" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card--progress-bar">
+            <div class="card--progress-bar--completed">
+            </div>
+          </div>
+        </div>
+        <div class="card--content">
           <ul>
-              <li>Hacer la compra semanal de alimentos</li>
-              <li>Limpiar el baño</li>
-              <li>Organizar y limpiar el espacio de trabajo</li>
-              <li>Hacer la colada y planchar la ropa</li>
-              <li>Reparar la lámpara de la sala de estar</li>
+              <li class="tuduItem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M11.9993 22.5342C17.5221 22.5342 21.9993 18.0571 21.9993 12.5342C21.9993 7.01139 17.5221 2.53424 11.9993 2.53424C6.47642 2.53424 1.99927 7.01139 1.99927 12.5342C1.99927 18.0571 6.47642 22.5342 11.9993 22.5342Z" stroke="black" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                <p>
+                  Hacer la compra semanal de alimentos
+                </p></li>
+              <li class="tuduItem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M11.9993 22.5342C17.5221 22.5342 21.9993 18.0571 21.9993 12.5342C21.9993 7.01139 17.5221 2.53424 11.9993 2.53424C6.47642 2.53424 1.99927 7.01139 1.99927 12.5342C1.99927 18.0571 6.47642 22.5342 11.9993 22.5342Z" stroke="black" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                <p>
+                  Limpiar el baño
+                </p>
+              </li>
+              <li class="tuduItem">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <path d="M11.9993 22.5342C17.5221 22.5342 21.9993 18.0571 21.9993 12.5342C21.9993 7.01139 17.5221 2.53424 11.9993 2.53424C6.47642 2.53424 1.99927 7.01139 1.99927 12.5342C1.99927 18.0571 6.47642 22.5342 11.9993 22.5342Z" fill="#2D9596"/>
+                  <path d="M21.9993 4.53424L11.9993 14.5442L8.99927 11.5442" stroke="#8DC120" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                <p class="completed">
+                  Organizar y limpiar el espacio de trabajo y puse el texto mas largo.
+                </p>
+              </li>
+
           </ul>
+        </div>
       </div>
   </section>
 
