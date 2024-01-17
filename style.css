@@ -121,8 +121,9 @@ header {
 
 .card {
   min-width: 360px;
+  width: 100%;
+  min-height: 45px;
   height: auto;
-  flex-shrink: 0; /* ??? */
   padding: 16px;
 
   display: inline-flex;
@@ -137,12 +138,14 @@ header {
 .card--header {
   display: flex;
   flex-direction: column;
+  width: 100%;
   justify-content: center;
   align-items: flex-start;
   gap: 4px;
 }
 .card--title {
   display: flex;
+  width: 100%;
   min-width: 328px;
   justify-content: space-between;
   align-items: center;
@@ -156,15 +159,16 @@ header {
   line-height: normal;
 }
 .card--progress-bar {
-  width: 328px;
+  width: 100%;
+  min-width: 328px;
   height: 8px;
   flex-shrink: 0;
-
+  
   border-radius: 4px;
   background-color: var(--white);
 }
 .card--progress-bar--completed {
-  width: 126px;
+  width: calc(100% / 3);
   height: 8px;
   flex-shrink: 0; /* ??? */
   border-radius: 4px;
@@ -180,14 +184,12 @@ li {
   list-style: none;
 }
 .tuduItem {
-  width: 328px;
+  width: 100%;
+  min-width: 328px;
   height: auto;
-  flex-shrink: 0;
-
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-shrink: 0;
   border-radius: 8px;
   margin-bottom: 2px;
   padding: 8px;
