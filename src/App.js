@@ -1,4 +1,9 @@
 import './App.css';
+import { Header } from './Header/Header';
+import { BackgroundImage } from './BackgroundImage/BackgroundImage.js';
+import { Card } from './Card/Card.js';
+import { TuduTask } from './TuduTask/TuduTask.js';
+import { Prueba } from './Prueba/Prueba.js';
 
 function App() {
   return (
@@ -12,20 +17,8 @@ function App() {
         <TuduTask />
       </Card>
       
-      <MainCosas />
+      <Prueba />
     </div>
-  );
-}
-
-function MainCosas() {
-  return (
-    <ul>
-      <li >
-        <p>
-          Hacer la compra semanal de alimentos
-        </p>
-      </li>
-    </ul>
   );
 }
 
