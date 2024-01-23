@@ -1,8 +1,8 @@
 function Prueba() {
   return (
-        <h1>
-          Este es el texto H1 de prueba, variable x.
-        </h1>
+        <h3>
+          Este es el texto H3 de prueba, sirve para experimentar cosas, y eliminarlas al final.
+        </h3>
 
   );
 }

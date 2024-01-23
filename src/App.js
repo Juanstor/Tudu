@@ -17,6 +17,12 @@ function App() {
         <TuduTask />
       </Card>
       
+      <Card>
+        <TuduTask />
+        <TuduTask />
+        <TuduTask />
+      </Card>
+      
       <Prueba />
     </div>
   );
