@@ -1,3 +1,5 @@
+import './BackgroundImage.css';
+
 function BackgroundImage() {
   return (
         <h1>

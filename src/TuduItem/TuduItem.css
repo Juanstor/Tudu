@@ -1,0 +1,31 @@
+/* li {
+  list-style: none;
+}
+ul {
+  width: 100%;
+} */
+.TuduItem {
+  width: 100%;
+  min-width: 328px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  padding: 8px;
+  background: var(--white);  
+}
+.TuduItem p {
+  flex: 1 0 0;
+
+  /* Text */
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.completed {
+  color: var(--gray4);
+  text-decoration: line-through;
+}

@@ -1,9 +1,8 @@
+import './Card.css';
+
 function Card({ children, total, completed}) {
   return (
-    <ul>
-      <h1>
-        _______________________________________________
-      </h1>
+    <ul className='card'>
       <h2>
         Aquí estará la barra de progreso.
       </h2>
@@ -11,9 +10,6 @@ function Card({ children, total, completed}) {
         De {total} TuduTask has hecho {completed} Task
       </p> 
       {children}
-      <h1>
-        _______________________________________________
-      </h1>
     </ul>
   );
 }

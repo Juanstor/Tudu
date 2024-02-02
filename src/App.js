@@ -2,13 +2,13 @@ import React from 'react';
 import { Header } from './Header/Header';
 import { BackgroundImage } from './BackgroundImage/BackgroundImage.js';
 import { Card } from './Card/Card.js';
-import { TuduTask } from './TuduTask/TuduTask.js';
+import { TuduItem } from './TuduItem/TuduItem.js';
 import { Prueba } from './Prueba/Prueba.js';
 
 const defaultTudu = [
   { text: 'Primer proyecto de portafolio', completed: false },
   { text: 'Completar checkeo medico', completed: true },
-  { text: 'Planear ejercicio', completed: true },
+  { text: 'Planear ejercicio, hacer 4 dias de ejercicio a la semana, nada de pereza, just try!', completed: true },
   { text: 'Cepillar dientes', completed: true },
 ];
 
@@ -20,7 +20,7 @@ function App() {
 
       <Card completed={8} total={16}>
         {defaultTudu.map(tudu => (
-          <TuduTask 
+          <TuduItem 
             Key={tudu.text} 
             text={tudu.text}
             completed={tudu.completed}
@@ -29,9 +29,9 @@ function App() {
       </Card>
 
       <Card completed={2} total={3}>
-        <TuduTask />
-        <TuduTask />
-        <TuduTask />
+        <TuduItem />
+        <TuduItem />
+        <TuduItem />
       </Card>
       
       <Prueba />

@@ -1,3 +1,5 @@
+import './Prueba.css';
+
 function Prueba() {
   return (
         <h3>
