@@ -10,8 +10,9 @@
   background-color: var(--white);
 }
 .background--image {
-  width: 160px;
+  width: auto;
   height: 160px;
+  object-fit: cover; 
 }
 .background > p {
   text-align: center;
