@@ -9,7 +9,7 @@ const defaultTudu = [
   { text: 'Primer proyecto de portafolio', completed: false },
   { text: 'Completar checkeo medico', completed: true },
   { text: 'Planear ejercicio, hacer 4 dias de ejercicio a la semana, nada de pereza, just try!', completed: true },
-  { text: 'Cepillar dientes', completed: true },
+  { text: 'Cepillar dientes', completed: false },
 ];
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <BackgroundImage />
 
-      <Card completed={8} total={16}>
+      <Card title={"Primer TuduCard"} completed={8} total={16}>
         {defaultTudu.map(tudu => (
           <TuduItem 
             Key={tudu.text} 
@@ -28,7 +28,7 @@ function App() {
         ))}
       </Card>
 
-      <Card completed={2} total={3}>
+      <Card title={"Segundo TuduCard"} completed={2} total={3}>
         <TuduItem />
         <TuduItem />
         <TuduItem />

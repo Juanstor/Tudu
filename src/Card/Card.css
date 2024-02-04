@@ -1,13 +1,3 @@
-/* Icons */
-.icon-container {
-  width: 24px;
-  height: 24px;
-}
-.icon-container svg {
-  width: 100%;
-  height: 100%;
-}
-
 .card {
   min-width: 360px;
   width: 100%;
@@ -19,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  margin-bottom: 4px; /* ←It has to delete at the end */
 
   border-radius: 16px;
   background: var(--colorNotes1);
