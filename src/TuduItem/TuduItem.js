@@ -8,7 +8,7 @@ function TuduItem(props) {
         <path d="M11.9993 22.5342C17.5221 22.5342 21.9993 18.0571 21.9993 12.5342C21.9993 7.01139 17.5221 2.53424 11.9993 2.53424C6.47642 2.53424 1.99927 7.01139 1.99927 12.5342C1.99927 18.0571 6.47642 22.5342 11.9993 22.5342Z" stroke="black" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
 
-      <p className={'TuduItem-completed'}>
+      <p className={` ${props.completed && "TuduItem-completed"} `}>
         {props.text}
       </p>
 

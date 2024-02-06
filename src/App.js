@@ -8,7 +8,7 @@ import { Prueba } from './Prueba/Prueba.js';
 const defaultTudu = [
   { text: 'Primer proyecto de portafolio', completed: false },
   { text: 'Completar checkeo medico', completed: true },
-  { text: 'Planear ejercicio, hacer 4 dias de ejercicio a la semana, nada de pereza, just try!', completed: true },
+  { text: 'Planear ejercicio, nada de pereza, just try it!', completed: true },
   { text: 'Cepillar dientes', completed: false },
 ];
 
