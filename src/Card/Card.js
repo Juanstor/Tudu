@@ -1,3 +1,4 @@
+import React from 'react';
 import './Card.css';
 
 function Card({ text, children, total, completed, title }) {

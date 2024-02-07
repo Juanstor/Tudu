@@ -19,9 +19,18 @@ svg {
   padding: 8px;
   background: var(--white);  
 }
-.TuduItem p {
+/* .TuduItem p {
   flex: 1 0 0;
 
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+} */
+.TuduItem input {
+  flex: 1 0 0;
+  border-style: none;
+  background-color: var(--gray6);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

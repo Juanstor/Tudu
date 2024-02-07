@@ -12,9 +12,15 @@ const defaultTudu = [
   { text: 'Cepillar dientes', completed: false },
 ];
 
+
 function App() {
+
+  // Contador de Tudus
+  // const[tudu, setCountTudus] = React.useState('defaultTudu');
+
   return (
     <>
+    
       <Header />
       <BackgroundImage />
 
@@ -23,7 +29,11 @@ function App() {
           <TuduItem 
             Key={tudu.text} 
             text={tudu.text}
-            completed={tudu.completed}
+            // completed={completedTudus}
+            
+            // itemText={itemText}
+            // setItemText={setItemText}
+            
           />
         ))}
       </Card>
