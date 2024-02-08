@@ -27,8 +27,7 @@ function TuduItem({completed, text, onComplete, onDelete}) {
           console.log("escribiste en el imput")
           setItemText(event.target.value);
         }}
-        
-        />
+      />
 
       <p>
         {text}

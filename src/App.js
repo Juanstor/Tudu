@@ -5,14 +5,24 @@ import { Card } from './Card/Card.js';
 import { TuduItem } from './TuduItem/TuduItem.js';
 import { Prueba } from './Prueba/Prueba.js';
 
-const defaultTudus = [
-  { text: 'Primer proyecto de portafolio', completed: false },
-  { text: 'Completar checkeo medico', completed: true },
-  { text: 'Planear ejercicio, nada de pereza, just try it!', completed: true },
-  { text: 'Cepillar dientes', completed: false },
-  { text: 'Adicional Tudu para contar cosas', completed: true },
-];
+let myTuduList = {
+  1: [
+    { id: 1, nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1' },
+    { id: 2, nombre: 'Elemento 2', descripcion: 'Descripción del elemento 2' }
+  ],
+  2: [
+    { id: 3, nombre: 'Elemento 3', descripcion: 'Descripción del elemento 3' },
+    { id: 4, nombre: 'Elemento 4', descripcion: 'Descripción del elemento 4' }
+  ]
+};
 
+let defaultTudus = [
+  { id: 1, text: 'Primer proyecto de portafolio', completed: false },
+  { id: 2, text: 'Completar checkeo medico', completed: true },
+  { id: 3, text: 'Planear ejercicio, nada de pereza, just try it!', completed: true },
+  { id: 4, text: 'Cepillar dientes', completed: false },
+  { id: 5, text: 'Adicional Tudu para contar cosas', completed: true },
+];
 
 function App() {
 

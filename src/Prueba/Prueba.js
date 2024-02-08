@@ -1,10 +1,26 @@
+import React from 'react';
 import './Prueba.css';
 
 function Prueba() {
+  let [itemText, setItemText] = React.useState('');
+  
   return (
-        <h3>
-          Este es el texto H3 de prueba, sirve para experimentar cosas, y eliminarlas al final.
-        </h3>
+    <>
+
+      <h1>
+        Inicio de prueba
+      </h1>
+
+      <input 
+        type='text' 
+        placeholder="Write here" 
+        onChange={(event) => {
+          setItemText(event.target.value);
+          console.log(`escribiste en el imputla prueba lo siguiente + ${event.target.value}`);
+        }}
+      />
+
+    </>
 
   );
 }
