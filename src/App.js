@@ -5,16 +5,16 @@ import { Card } from './Card/Card.js';
 import { TuduItem } from './TuduItem/TuduItem.js';
 import { Prueba } from './Prueba/Prueba.js';
 
-let myTuduList = {
-  1: [
-    { id: 1, nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1' },
-    { id: 2, nombre: 'Elemento 2', descripcion: 'Descripción del elemento 2' }
-  ],
-  2: [
-    { id: 3, nombre: 'Elemento 3', descripcion: 'Descripción del elemento 3' },
-    { id: 4, nombre: 'Elemento 4', descripcion: 'Descripción del elemento 4' }
-  ]
-};
+// let myTuduList = {
+//   1: [
+//     { id: 1, nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1' },
+//     { id: 2, nombre: 'Elemento 2', descripcion: 'Descripción del elemento 2' }
+//   ],
+//   2: [
+//     { id: 3, nombre: 'Elemento 3', descripcion: 'Descripción del elemento 3' },
+//     { id: 4, nombre: 'Elemento 4', descripcion: 'Descripción del elemento 4' }
+//   ]
+// };
 
 let defaultTudus = [
   { id: 1, text: 'Primer proyecto de portafolio', completed: false },
@@ -24,9 +24,10 @@ let defaultTudus = [
   { id: 5, text: 'Adicional Tudu para contar cosas', completed: true },
 ];
 
+
 function App() {
 
-  // Contador de tudus
+  // Modificando TUDUS + Contador de tudus
   const[tudus, setTudus] = React.useState(defaultTudus);
   const completedTudus = tudus.filter(
     tudu => !!tudu.completed
@@ -37,7 +38,7 @@ function App() {
   const completingTudu = (text) => {
     const newTudus = [...tudus];
     const tuduIndex = newTudus.findIndex(
-      (tudu) => tudu.text === text
+      (n) => n.text === text
     );
     newTudus[tuduIndex].completed = true;
     setTudus(newTudus);
@@ -47,7 +48,7 @@ function App() {
     const deletingTudu = (text) => {
       const newTudus = [...tudus];
       const tuduIndex = newTudus.findIndex(
-        (tudu) => tudu.text === text
+        (n) => n.text === text
       );
       newTudus.splice(tuduIndex, 1);
       setTudus(newTudus);
@@ -67,9 +68,9 @@ function App() {
         completed={completedTudus} 
         total={totalTudus}
       >
-        {defaultTudus.map(tudu => (
+        {tudus.map(tudu => (
           <TuduItem 
-            Key={tudu.text} 
+            Key={tudu.text}
             text={tudu.text}
             completed={tudu.completed}
             onComplete={() => completingTudu(tudu.text)}

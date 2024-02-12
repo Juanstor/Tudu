@@ -1,11 +1,10 @@
 svg {
-  min-width: 24px;
-  min-height: 24px;
-}
-/* svg {
+  /* min-width: 24px;
+  min-height: 24px; */
   width: 24px;
   height: 24px;
-} */
+}
+
 
 .TuduItem {
   width: 100%;
@@ -19,15 +18,15 @@ svg {
   padding: 8px;
   background: var(--white);  
 }
-/* .TuduItem p {
+.TuduItem p {
   flex: 1 0 0;
 
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-} */
-.TuduItem input {
+}
+/* .TuduItem input {
   flex: 1 0 0;
   border-style: none;
   background-color: var(--gray6);
@@ -35,7 +34,7 @@ svg {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-}
+} */
 .TuduItem-completed {
   color: var(--gray4);
   text-decoration: line-through;
