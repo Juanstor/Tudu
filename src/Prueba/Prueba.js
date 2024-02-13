@@ -8,7 +8,8 @@ function Prueba() {
     <>
 
       <h1>
-        Inicio de prueba
+        Inicio de prueba, item text abajo:
+        {itemText}
       </h1>
 
       <input 
