@@ -27,14 +27,18 @@ let defaultTudus = [
 
 function App() {
 
-  // Modificando TUDUS + Contador de tudus
+  // Modificandor de TUDUS, el que almacena la lista de Tudus
   const[tudus, setTudus] = React.useState(defaultTudus);
-  const completedTudus = tudus.filter(
-    tudu => !!tudu.completed
-  ).length;
+
+  // Contador de todos los tudus
   const totalTudus = tudus.length;
 
-  //toggle complete, Completing a Tudu with the icon check
+  // Contador de tudus completados
+  const completedTudus = tudus.filter(
+    tudu => !!tudu.completed
+    ).length;
+    
+  //Completing a Tudu with the icon check
   const completingTudu = (text) => {
     const newTudus = [...tudus];
     const tuduIndex = newTudus.findIndex(
@@ -44,19 +48,15 @@ function App() {
     setTudus(newTudus);
   };
 
-    //Deleting a tudu with the icon X
-    const deletingTudu = (text) => {
-      const newTudus = [...tudus];
-      const tuduIndex = newTudus.findIndex(
-        (n) => n.text === text
-      );
-      newTudus.splice(tuduIndex, 1);
-      setTudus(newTudus);
-    };
-
-    // Ahora es necesario que los dos estados esten en el archivo app para que se pueda comunicar y asi actualice la lista de tareas. Sin embargo hay problemas con el input, ya que se van a cambair todos los textos si se modifica un solo input. Revisar con cuidado.
-
-    //Otra es tambien cambiar el key de texto por otra manera, ya que el input cambia el texto, y el key se pierde.
+  //Deleting a tudu with the icon X
+  const deletingTudu = (text) => {
+    const newTudus = [...tudus];
+    const tuduIndex = newTudus.findIndex(
+      (n) => n.text === text
+    );
+    newTudus.splice(tuduIndex, 1);
+    setTudus(newTudus);
+  };
 
   return (
     <>

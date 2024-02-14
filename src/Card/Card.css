@@ -47,6 +47,12 @@
   border-radius: 4px;
   background-color: var(--white);
 }
+.card--progress-bar p {
+  position: absolute;
+  right: 18px;
+  font-size: 0.8rem;
+
+}
 .card--progress-bar--completed {
   width: calc(100% / 3);
   height: 8px;
