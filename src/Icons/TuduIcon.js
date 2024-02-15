@@ -1,11 +1,14 @@
-import { ReactComponent as CheckSVG } from './CheckIcon.svg'
+import { ReactComponent as CompletedSVG } from './CompletedIcon.svg'
+import { ReactComponent as IncompletedSVG } from './IncompletedIcon.svg'
 import { ReactComponent as EditSVG } from './EditIcon.svg'
 import { ReactComponent as DeleteSVG } from './DeleteIcon.svg'
 
-// const iconTypes = { 
-//   "aja": <DeleteSVG />,
-//   "tu sabe": <EditSVG />,
-// }
+const iconType = { 
+  "Completed": <CompletedSVG />,
+  "Incompleted": <IncompletedSVG />,
+  "Edit": <EditSVG />,
+  "Delete": <DeleteSVG />,
+}
 
 // Clase iconos en react min 15..30
 
@@ -14,9 +17,8 @@ function TuduIcon({ type }) {
     <span
       className={`Icon Icon-${type}`}
     >
-      <CheckSVG />
-      {/* <EditSVG />
-      <DeleteSVG /> */}
+      {iconType[type]}
+
     </span>
   )
 }

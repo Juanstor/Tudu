@@ -1,13 +1,13 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function CheckIcon() {
+function IncompletedIcon() {
   return(
     <TuduIcon
-      type="Check"
-      color="red"
+      type="Incompleted"
+      color="brown"
     /> 
   );
 }
 
-export { CheckIcon };
+export { IncompletedIcon };

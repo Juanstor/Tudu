@@ -1,11 +1,3 @@
-svg {
-  /* min-width: 24px;
-  min-height: 24px; */
-  width: 24px;
-  height: 24px;
-}
-
-
 .TuduItem {
   width: 100%;
   min-width: 284px;
@@ -26,16 +18,18 @@ svg {
   font-weight: 400;
   line-height: normal;
 }
-/* .TuduItem input {
-  flex: 1 0 0;
-  border-style: none;
-  background-color: var(--gray6);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-} */
-.TuduItem-completed {
-  color: var(--gray4);
+
+.icon {
+  /* min-width: 24px;
+  min-height: 24px; */
+  width: 24px;
+  height: 24px;
+}
+.icon-completed {
+  color: green;
+  text-decoration: line-through;
+}
+.icon-incompleted {
+  color: blue);
   text-decoration: line-through;
 }

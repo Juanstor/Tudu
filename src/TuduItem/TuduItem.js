@@ -1,6 +1,7 @@
 import React from 'react';
 import './TuduItem.css';
-import { CheckIcon } from "../Icons/CheckIcon";
+import { CompletedIcon } from "../Icons/CompletedIcon";
+import { IncompletedIcon } from "../Icons/Incompleted";
 import { EditIcon } from "../Icons/EditIcon";
 import { DeleteIcon } from "../Icons/DeleteIcon";
 import { PiCheckCircleThin, PiCircleDashedThin, PiTrashThin, PiPencilSimpleLineThin, } from "react-icons/pi";
@@ -11,7 +12,8 @@ function TuduItem({completed, text, onComplete, onDelete}) {
   return (
     <li className="TuduItem">
 
-      <CheckIcon />
+      <CompletedIcon />
+      <IncompletedIcon />
 
       {/* <PiCheckCircleThin /> */}
       <PiCircleDashedThin onClick={onComplete}/>
