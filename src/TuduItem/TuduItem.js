@@ -12,21 +12,21 @@ function TuduItem({completed, text, onComplete, onDelete}) {
   return (
     <li className="TuduItem">
 
+      <IncompletedIcon onClick={onComplete}/>
       <CompletedIcon />
-      <IncompletedIcon />
-
-      {/* <PiCheckCircleThin /> */}
-      <PiCircleDashedThin onClick={onComplete}/>
+{/* 
+      <PiCheckCircleThin onClick={onComplete}/>
+      <PiCircleDashedThin onClick={onComplete}/> */}
 
       <p className={` ${completed && "TuduItem-completed"} `}>
         {text}
       </p>
 
       <EditIcon />
-      <PiPencilSimpleLineThin fill="var(--gray3)"/>
+      {/* <PiPencilSimpleLineThin fill="var(--gray3)"/> */}
 
-      <DeleteIcon />
-      <PiTrashThin fill="var(--gray3)" onClick={onDelete}/>
+      <DeleteIcon onClick={onDelete}/>
+      {/* <PiTrashThin fill="var(--gray3)" onClick={onDelete}/> */}
       
     </li>
 

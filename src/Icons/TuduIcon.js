@@ -18,7 +18,6 @@ function TuduIcon({ type }) {
       className={`Icon Icon-${type}`}
     >
       {iconType[type]}
-
     </span>
   )
 }
