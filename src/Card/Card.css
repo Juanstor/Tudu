@@ -54,7 +54,7 @@
 
 }
 .card--progress-bar--completed {
-  width: calc(100% / 3);
+  /* width: calc(100% / 3); */
   height: 8px;
   flex-shrink: 0; /* ??? */
   border-radius: 4px;

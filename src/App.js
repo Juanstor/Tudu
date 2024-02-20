@@ -38,6 +38,9 @@ function App() {
     tudu => !!tudu.completed
     ).length;
     
+  // Calculating progress bar
+  const progressPercentage = ( completedTudus / totalTudus) * 100;
+
   //Completing a Tudu with the icon check
   const completingTudu = (text) => {
     const newTudus = [...tudus];
@@ -47,26 +50,27 @@ function App() {
     newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
     setTudus(newTudus);
   };
-
+  
   //Deleting a tudu with the icon X
   const deletingTudu = (text) => {
     const newTudus = [...tudus];
     const tuduIndex = newTudus.findIndex(
-      (n) => n.text === text
-    );
+        (n) => n.text === text
+      );
     newTudus.splice(tuduIndex, 1);
     setTudus(newTudus);
   };
 
   return (
     <>
-    
       <Header />
       <BackgroundImage />
 
       <Card title={"Primer TuduCard"} 
         completed={completedTudus} 
         total={totalTudus}
+        percentage={progressPercentage}
+        // progress={progressBar}
       >
         {tudus.map(tudu => (
           <TuduItem 
@@ -75,18 +79,8 @@ function App() {
             completed={tudu.completed}
             onComplete={() => completingTudu(tudu.text)}
             onDelete={() => deletingTudu(tudu.text)}
-            
-            // itemText={itemText}
-            // setItemText={setItemText}
-            
           />
         ))}
-      </Card>
-
-      <Card title={"Segundo TuduCard"} completed={2} total={3}>
-        <TuduItem />
-        <TuduItem />
-        <TuduItem />
       </Card>
       
       <Prueba />

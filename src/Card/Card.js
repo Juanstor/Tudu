@@ -3,7 +3,7 @@ import './Card.css';
 import { ArrowIcon } from '../Icons/ArrowIcon';
 
 
-function Card({ text, children, total, completed, title }) {
+function Card({ text, children, total, completed, title, percentage }) {
 
   return (
     <section className="card">
@@ -16,6 +16,7 @@ function Card({ text, children, total, completed, title }) {
           <ArrowIcon />
 
         </div>
+
         <div className="card--progress-bar">
           <p>
             {completed} / {total}
@@ -23,9 +24,9 @@ function Card({ text, children, total, completed, title }) {
 
           <div 
             className="card--progress-bar--completed"
+            style={{ width: `${percentage}%` }}
+          />
 
-          >
-          </div>
         </div>
       </div>
 
