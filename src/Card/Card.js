@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import { PiCaretRightBold, } from "react-icons/pi";
+import { ArrowIcon } from '../Icons/ArrowIcon';
 
 
 function Card({ text, children, total, completed, title }) {
@@ -13,7 +13,7 @@ function Card({ text, children, total, completed, title }) {
 
           <h2>{title}</h2>
 
-          <PiCaretRightBold fill='var(--white)'/>
+          <ArrowIcon />
 
         </div>
         <div className="card--progress-bar">

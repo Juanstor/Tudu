@@ -19,17 +19,7 @@
   line-height: normal;
 }
 
-.icon {
-  /* min-width: 24px;
-  min-height: 24px; */
-  width: 24px;
-  height: 24px;
-}
-.icon-completed {
-  color: green;
+.TuduItem-completed {
   text-decoration: line-through;
-}
-.icon-incompleted {
-  color: blue);
-  text-decoration: line-through;
+  color: var(--gray4);
 }

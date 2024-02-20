@@ -1,0 +1,27 @@
+.Icon {
+  cursor: pointer;
+
+  width: 24px;
+  height: 24px;
+}
+.Icon-Completed {
+  fill: var(--stateSuccess);
+}
+.Icon-Incompleted {
+  fill: var(--gray4);
+}
+.Icon-Incompleted:hover {
+  fill: var(--stateSuccess);
+}
+.Icon-Edit {
+  fill: var(--gray4);
+}
+.Icon-Edit:hover {
+  fill: var(--black);
+}
+.Icon-Delete {
+  fill: var(--gray4);
+}
+.Icon-Delete:hover {
+  fill: var(--black);
+}

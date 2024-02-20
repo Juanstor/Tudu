@@ -1,23 +1,25 @@
+import { ReactComponent as ArrowSVG } from './ArrowIcon.svg'
 import { ReactComponent as CompletedSVG } from './CompletedIcon.svg'
 import { ReactComponent as IncompletedSVG } from './IncompletedIcon.svg'
 import { ReactComponent as EditSVG } from './EditIcon.svg'
 import { ReactComponent as DeleteSVG } from './DeleteIcon.svg'
+import './TuduIcon.css'
 
-const iconType = { 
+const iconTypes = { 
+  "Arrow": <ArrowSVG />,
   "Completed": <CompletedSVG />,
   "Incompleted": <IncompletedSVG />,
   "Edit": <EditSVG />,
   "Delete": <DeleteSVG />,
 }
 
-// Clase iconos en react min 15..30
-
-function TuduIcon({ type }) {
+function TuduIcon({ type, onClick }) {
   return(
     <span
       className={`Icon Icon-${type}`}
+      onClick={onClick}
     >
-      {iconType[type]}
+      {iconTypes[type]}
     </span>
   )
 }

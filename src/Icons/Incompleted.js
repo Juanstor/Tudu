@@ -1,11 +1,11 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function IncompletedIcon() {
+function IncompletedIcon({ completed, onComplete }) {
   return(
     <TuduIcon
-      type="Incompleted"
-      color="brown"
+      type={completed ? 'Completed' : 'Incompleted'}
+      onClick={onComplete}
     /> 
   );
 }

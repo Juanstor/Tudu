@@ -44,7 +44,7 @@ function App() {
     const tuduIndex = newTudus.findIndex(
       (n) => n.text === text
     );
-    newTudus[tuduIndex].completed = true;
+    newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
     setTudus(newTudus);
   };
 
