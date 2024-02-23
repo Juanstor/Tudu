@@ -1,7 +1,7 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function ArrowIcon({}) {
+function ArrowIcon() {
   return(
     <TuduIcon
       type="Arrow"

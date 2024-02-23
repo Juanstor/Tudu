@@ -28,22 +28,35 @@ import { Prueba } from './Prueba/Prueba.js';
 // localStorage.removeItem('TUDULIST_V1');
 
 
+//CUSTOM HOOK for Local Storage and data persistence:
+function useLocalStorate (itemName, initialValue) {
 
-
-function App() {
   //Reading and saving localStorage
-  const localStorageStringTudus = localStorage.getItem('TUDULIST_V1');
-  let parsedTudus;
+  const localStorageItem = localStorage.getItem(itemName);
 
-  if (localStorageStringTudus) {
-    parsedTudus = JSON.parse(localStorageStringTudus);
+  let parsedItem;
+  
+  if (localStorageItem) {
+    parsedItem = JSON.parse(localStorageItem);
   } else {
-    localStorage.setItem('TUDULIST_V1', JSON.stringify([]));
-    parsedTudus = [];
+    localStorage.setItem(itemName, JSON.stringify([initialValue]));
+    parsedItem = [initialValue];
   };
   
+  const [item, setItem] = React.useState (parsedItem);
+  
+  // Persistence, saving Tudus in localStorage and states
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+};
+
+function App() {
   // Modificandor de TUDUS, el que almacena la lista de Tudus
-  const[tudus, setTudus] = React.useState(parsedTudus);
+  const[tudus, saveTudus] = useLocalStorate ('TUDULIST_V1', []);
 
   // Contador de todos los tudus
   const totalTudus = tudus.length;
@@ -56,12 +69,6 @@ function App() {
   // Calculating progress bar
   const progressPercentage = ( completedTudus / totalTudus) * 100;
 
-  // Persistence, saving Tudus in localStorage
-    const savingTudusLS = (newTudus) => {
-      localStorage.setItem('TUDULIST_V1', JSON.stringify(newTudus));
-      setTudus(newTudus);
-    };
-
   //Completing a Tudu with the icon check
   const completingTudu = (text) => {
     const newTudus = [...tudus];
@@ -69,7 +76,7 @@ function App() {
       (n) => n.text === text
     );
     newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
-    savingTudusLS(newTudus);
+    saveTudus(newTudus);
   };
   
   //Deleting a tudu with the icon X
@@ -79,7 +86,7 @@ function App() {
         (n) => n.text === text
       );
     newTudus.splice(tuduIndex, 1);
-    savingTudusLS(newTudus);
+    saveTudus(newTudus);
   };
 
   return (
