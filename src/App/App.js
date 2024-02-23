@@ -1,10 +1,6 @@
 import React from 'react';
-import { Header } from './Header/Header';
-import { BackgroundImage } from './BackgroundImage/BackgroundImage.js';
-import { Card } from './Card/Card.js';
-import { TuduItem } from './TuduItem/TuduItem.js';
-import { Prueba } from './Prueba/Prueba.js';
-
+import { AppUI } from './AppUI.js';
+import { useLocalStorage } from './useLocalStorage.js';
 // let myTuduList = {
 //   1: [
 //     { id: 1, nombre: 'Elemento 1', descripcion: 'Descripción del elemento 1' },
@@ -24,39 +20,15 @@ import { Prueba } from './Prueba/Prueba.js';
 //   { id: 5, text: 'Adicional Tudu para contar cosas', completed: true },
 // ];
 
-// localStorage.setItem('TUDULIST_V1', defaultTudus);
+// localStorage.setItem('TUDULIST_V1', JSON.stringify(defaultTudus));
 // localStorage.removeItem('TUDULIST_V1');
 
 
-//CUSTOM HOOK for Local Storage and data persistence:
-function useLocalStorate (itemName, initialValue) {
 
-  //Reading and saving localStorage
-  const localStorageItem = localStorage.getItem(itemName);
-
-  let parsedItem;
-  
-  if (localStorageItem) {
-    parsedItem = JSON.parse(localStorageItem);
-  } else {
-    localStorage.setItem(itemName, JSON.stringify([initialValue]));
-    parsedItem = [initialValue];
-  };
-  
-  const [item, setItem] = React.useState (parsedItem);
-  
-  // Persistence, saving Tudus in localStorage and states
-  const saveItem = (newItem) => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-};
 
 function App() {
   // Modificandor de TUDUS, el que almacena la lista de Tudus
-  const[tudus, saveTudus] = useLocalStorate ('TUDULIST_V1', []);
+  const[tudus, saveTudus] = useLocalStorage ('TUDULIST_V1', []);
 
   // Contador de todos los tudus
   const totalTudus = tudus.length;
@@ -90,30 +62,16 @@ function App() {
   };
 
   return (
-    <>
-      <Header />
-      <BackgroundImage />
-
-      <Card title={"Primer TuduCard"} 
-        completed={completedTudus} 
-        total={totalTudus}
-        percentage={progressPercentage}
-        // progress={progressBar}
-      >
-        {tudus.map(tudu => (
-          <TuduItem 
-            Key={tudu.text}
-            text={tudu.text}
-            completed={tudu.completed}
-            onComplete={() => completingTudu(tudu.text)}
-            onDelete={() => deletingTudu(tudu.text)}
-          />
-        ))}
-      </Card>
-      
-      <Prueba />
-    </>
-  );
+    <AppUI 
+      tudus={tudus}
+      completedTudus={completedTudus}
+      totalTudus={totalTudus}
+      progressPercentage={progressPercentage}
+      completingTudu={completingTudu}
+      deletingTudu={deletingTudu}
+    />
+  )
+  
 }
 
 export default App;
