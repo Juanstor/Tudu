@@ -28,7 +28,12 @@ import { useLocalStorage } from './useLocalStorage.js';
 
 function App() {
   // Modificandor de TUDUS, el que almacena la lista de Tudus
-  const[tudus, saveTudus] = useLocalStorage ('TUDULIST_V1', []);
+  const{
+    item: tudus,
+    saveItem: saveTudus,
+    loading,
+    error
+  } = useLocalStorage ('TUDULIST_V1', []);
 
   // Contador de todos los tudus
   const totalTudus = tudus.length;
@@ -63,6 +68,8 @@ function App() {
 
   return (
     <AppUI 
+      loading={loading}
+      error={error}
       tudus={tudus}
       completedTudus={completedTudus}
       totalTudus={totalTudus}

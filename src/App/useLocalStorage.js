@@ -3,19 +3,36 @@ import React from 'react';
 //CUSTOM HOOK for Local Storage and data persistence:
 function useLocalStorage (itemName, initialValue) {
 
-  //Reading and saving localStorage
-  const localStorageItem = localStorage.getItem(itemName);
+  const [item, setItem] = React.useState (initialValue);
+  const [loading, setLoading] = React.useState (true);
+  const [error, setError] = React.useState (false);
+  
+  React.useEffect(() => {
 
-  let parsedItem;
+    setTimeout(() => {
+      try {
+        //Reading and saving localStorage
+        const localStorageItem = localStorage.getItem(itemName);
+      
+        let parsedItem;
   
-  if (localStorageItem) {
-    parsedItem = JSON.parse(localStorageItem);
-  } else {
-    localStorage.setItem(itemName, JSON.stringify([initialValue]));
-    parsedItem = [initialValue];
-  };
+        if (localStorageItem) {
+          parsedItem = JSON.parse(localStorageItem);
+          setItem(parsedItem);
+        } else {
+          localStorage.setItem(itemName, JSON.stringify([initialValue]));
+          parsedItem = [initialValue];
+        };
   
-  const [item, setItem] = React.useState (parsedItem);
+        setLoading(false);
+      
+      } catch (error){
+      setLoading(false);
+      setError(error);
+      }
+    }, 1000);
+
+  }, []); 
   
   // Persistence, saving Tudus in localStorage and states
   const saveItem = (newItem) => {
@@ -23,7 +40,12 @@ function useLocalStorage (itemName, initialValue) {
     setItem(newItem);
   };
 
-  return [item, saveItem];
+  return {
+    item, 
+    saveItem,
+    loading,
+    error,
+  };
 };
 
 export { useLocalStorage };
