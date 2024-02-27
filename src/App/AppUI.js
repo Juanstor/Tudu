@@ -6,28 +6,31 @@ import { Prueba } from '../Prueba/Prueba.js';
 import { EmptyTudu } from '../EmptyTudu/EmptyTudu.js';
 import { LoadingTudu } from '../LoadingTudu/LoadingTudu.js';
 import { ErrorTudu } from '../ErrorTudu/ErrorTudu.js';
+import { TuduContext } from '../Context/Context.js';
 
-function AppUI ({
-  loading,
-  error,
-  tudus,
-  completedTudus,
-  totalTudus,
-  progressPercentage,
-  completingTudu,
-  deletingTudu,
-}) {
+function AppUI () {
   return (
     <>
       <Header />
       <BackgroundImage />
   
-      <Card 
-        title={"Primer TuduCard"} 
-        completed={completedTudus} 
-        total={totalTudus}
-        percentage={progressPercentage}
-        >
+      <TuduContext.Consumer>
+        {({
+          loading,
+          error,
+          tudus,
+          completedTudus,
+          totalTudus,
+          progressPercentage,
+          completingTudu,
+          deletingTudu,
+        }) => (
+          <Card 
+            title={"Primer TuduCard"} 
+            completed={completedTudus} 
+            total={totalTudus}
+            percentage={progressPercentage}
+          >
           {loading && <LoadingTudu />}           
           {error && <ErrorTudu />}           
           {(!loading && tudus.lenght === 0) && <EmptyTudu />}  
@@ -40,8 +43,11 @@ function AppUI ({
               onComplete={() => completingTudu(tudu.text)}
               onDelete={() => deletingTudu(tudu.text)}
             />
-        ))}
-      </Card>
+          ))}
+        </Card>
+        )}
+
+      </TuduContext.Consumer>
       
       <Prueba />
     </>
