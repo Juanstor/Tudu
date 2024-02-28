@@ -1,9 +1,10 @@
-import { ReactComponent as ArrowSVG } from './ArrowIcon.svg'
-import { ReactComponent as CompletedSVG } from './CompletedIcon.svg'
-import { ReactComponent as IncompletedSVG } from './IncompletedIcon.svg'
-import { ReactComponent as EditSVG } from './EditIcon.svg'
-import { ReactComponent as DeleteSVG } from './DeleteIcon.svg'
-import './TuduIcon.css'
+import { ReactComponent as ArrowSVG } from './ArrowIcon.svg';
+import { ReactComponent as CompletedSVG } from './CompletedIcon.svg';
+import { ReactComponent as IncompletedSVG } from './IncompletedIcon.svg';
+import { ReactComponent as EditSVG } from './EditIcon.svg';
+import { ReactComponent as DeleteSVG } from './DeleteIcon.svg';
+import { ReactComponent as MenuSVG } from './MenuIcon.svg';
+import './TuduIcon.css';
 
 const iconTypes = { 
   "Arrow": <ArrowSVG />,
@@ -11,6 +12,7 @@ const iconTypes = {
   "Incompleted": <IncompletedSVG />,
   "Edit": <EditSVG />,
   "Delete": <DeleteSVG />,
+  "Menu": <MenuSVG />,
 }
 
 function TuduIcon({ type, onClick }) {

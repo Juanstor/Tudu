@@ -1,17 +1,13 @@
 import React from 'react';
 import './Header.css';
+import { MenuIcon } from '../Icons/MenuIcon';
 
-function Header() {
+function Header({ onShowMenu, }) {
   return (
     <div className='header'>
-      <div onClick={(event) => console.log(event)}
-      className='icon-container'>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <MenuIcon 
+        onShowMenu={onShowMenu}
+      />
       <h1>TUDU</h1>
       <div className='icon-container'>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

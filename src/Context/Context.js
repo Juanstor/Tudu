@@ -5,7 +5,7 @@ import { useLocalStorage } from './useLocalStorage'
 const TuduContext = React.createContext();
 
 function TuduProvider({ children }) {
-
+  
   // Modificandor de TUDUS, el que almacena la lista de Tudus
   const{
     item: tudus,
@@ -13,6 +13,13 @@ function TuduProvider({ children }) {
     loading,
     error
   } = useLocalStorage ('TUDULIST_V1', []);
+  
+  //Toggle MENU
+  const [toggleMenu, setToggleMenu] = React.useState(false);
+  const showingMenu = () => {
+    setToggleMenu(!toggleMenu);
+    console.log("se cambio el valor !toggleMenu");
+  }
 
   // Contador de todos los tudus
   const totalTudus = tudus.length;
@@ -44,7 +51,7 @@ function TuduProvider({ children }) {
     newTudus.splice(tuduIndex, 1);
     saveTudus(newTudus);
   };
-  
+
 
   return (
     <TuduContext.Provider value={{
@@ -56,6 +63,9 @@ function TuduProvider({ children }) {
       progressPercentage,
       completingTudu,
       deletingTudu,
+      toggleMenu,
+      setToggleMenu,
+      showingMenu,
     }}>
       {children}
     </TuduContext.Provider>

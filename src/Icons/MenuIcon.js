@@ -1,13 +1,13 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function DeleteIcon({ onDelete }) {
+function MenuIcon({ onShowMenu }) {
   return(
     <TuduIcon
-      type="Delete"
-      onClick={onDelete}
+      type="Menu"
+      onClick={onShowMenu}
     /> 
   );
 }
 
-export { DeleteIcon };
+export { MenuIcon };

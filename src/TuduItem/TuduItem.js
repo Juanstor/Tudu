@@ -13,7 +13,7 @@ function TuduItem({completed, text, onComplete, onDelete}) {
       <CompletedIcon 
         completed={completed}
         onComplete={onComplete}
-        />
+      />
 
       <p className={` ${completed && "TuduItem-completed"} `}>
         {text}
@@ -25,7 +25,6 @@ function TuduItem({completed, text, onComplete, onDelete}) {
 
       <DeleteIcon
         onDelete={onDelete}
-        // onClick={onDelete}
       />
       
     </li>

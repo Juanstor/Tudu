@@ -1,5 +1,4 @@
 import React from 'react';
-import { TuduContext } from '../Context/Context.js';
 import { Header } from '../Header/Header.js';
 import { BackgroundImage } from '../BackgroundImage/BackgroundImage.js';
 import { Card } from '../Card/Card.js';
@@ -8,6 +7,8 @@ import { Prueba } from '../Prueba/Prueba.js';
 import { EmptyTudu } from '../EmptyTudu/EmptyTudu.js';
 import { LoadingTudu } from '../LoadingTudu/LoadingTudu.js';
 import { ErrorTudu } from '../ErrorTudu/ErrorTudu.js';
+import { Menu } from '../Menu/Menu.js';
+import { TuduContext } from '../Context/Context.js';
 
 function AppUI () {
 
@@ -20,25 +21,32 @@ function AppUI () {
     progressPercentage,
     completingTudu,
     deletingTudu,
+    toggleMenu,
+    showingMenu,
   } = React.useContext(TuduContext);
 
   return (
     <>
-      <Header />
+      <Header 
+        onShowMenu={showingMenu}
+      />
+
+      {toggleMenu && <Menu />}
+
       <BackgroundImage />
-  
+
       <Card 
         title={"Primer TuduCard"} 
         completed={completedTudus} 
         total={totalTudus}
         percentage={progressPercentage}
       >
-        {loading && <LoadingTudu />}           
-        {error && <ErrorTudu />}           
+        {loading && <LoadingTudu />}
+        {error && <ErrorTudu />}
         {(!loading && tudus.lenght === 0) && <EmptyTudu />}  
 
         {tudus.map(tudu => (
-          <TuduItem 
+          <TuduItem
             Key={tudu.text}
             text={tudu.text}
             completed={tudu.completed}
