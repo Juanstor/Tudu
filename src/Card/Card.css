@@ -29,9 +29,10 @@
   min-width: 328px;
   justify-content: space-between;
   align-items: center;
-  /* gap: 20px; */
+  gap: 8px;
 }
 .card--title h2{
+  flex: 1 0 0;
   color: var(--white);
   font-size: 20px;
   font-style: normal;

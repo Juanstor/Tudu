@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 import { ArrowIcon } from '../Icons/ArrowIcon';
-
+import { PlusIcon } from '../Icons/PlusIcon';
 
 function Card({ text, children, total, completed, title, percentage }) {
 
@@ -13,6 +13,7 @@ function Card({ text, children, total, completed, title, percentage }) {
 
           <h2>{title}</h2>
 
+          <PlusIcon />
           <ArrowIcon />
 
         </div>
@@ -33,6 +34,7 @@ function Card({ text, children, total, completed, title, percentage }) {
       <div className="card--content">
         {children}
       </div>
+
 
     </section>
   );

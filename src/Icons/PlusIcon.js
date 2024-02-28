@@ -1,12 +1,13 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function EditIcon() {
+function PlusIcon({ onAddTudu }) {
   return(
     <TuduIcon
-      type="Edit"
+      type="Plus"
+      onClick={onAddTudu}
     /> 
   );
 }
 
-export { EditIcon };
+export { PlusIcon };
