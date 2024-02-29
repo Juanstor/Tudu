@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Tudu/static/css/main.7377d146.css",
+    "main.js": "/Tudu/static/js/main.ef0c49a8.js",
+    "static/media/IncompletedIcon.svg": "/Tudu/static/media/IncompletedIcon.b574aec32d22c2b907d1204be1b93d3e.svg",
+    "index.html": "/Tudu/index.html",
+    "static/media/EditIcon.svg": "/Tudu/static/media/EditIcon.e1c88c6f45075f08b3bcad8f8a97f2a0.svg",
+    "static/media/DeleteIcon.svg": "/Tudu/static/media/DeleteIcon.0dfb1fdb367d8c347e0bfafceed76ae6.svg",
+    "static/media/MenuIcon.svg": "/Tudu/static/media/MenuIcon.a5d6ccb203799e524a3d69d7045b1767.svg",
+    "static/media/PlusIcon.svg": "/Tudu/static/media/PlusIcon.982263f85a5ea55752362aabc513ccef.svg",
+    "static/media/CompletedIcon.svg": "/Tudu/static/media/CompletedIcon.56acad41540d416cc06e8fc481a76e52.svg",
+    "static/media/ArrowIcon.svg": "/Tudu/static/media/ArrowIcon.f8838223a0567d1989c4b33b0fc0c3da.svg",
+    "main.7377d146.css.map": "/Tudu/static/css/main.7377d146.css.map",
+    "main.ef0c49a8.js.map": "/Tudu/static/js/main.ef0c49a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7377d146.css",
+    "static/js/main.ef0c49a8.js"
+  ]
+}
