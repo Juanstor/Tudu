@@ -20,6 +20,10 @@ function TuduProvider({ children }) {
     setToggleMenu(!toggleMenu);
     console.log("se cambio el valor !toggleMenu");
   }
+  
+  //Modal (create Tudu)
+  const [openModal, setOpenModal] = React.useState(false);
+
 
   // Contador de todos los tudus
   const totalTudus = tudus.length;
@@ -31,6 +35,16 @@ function TuduProvider({ children }) {
     
   // Calculating progress bar
   const progressPercentage = ( completedTudus / totalTudus) * 100;
+
+  //Add a Item or Tudu
+  const addTudu = (text) => {
+    const newTudus = [...tudus];
+    newTudus.push({
+      text,
+      completed: false,
+    });
+    saveTudus(newTudus);
+  };
 
   //Completing a Tudu with the icon check
   const completingTudu = (text) => {
@@ -61,11 +75,14 @@ function TuduProvider({ children }) {
       completedTudus,
       totalTudus,
       progressPercentage,
+      addTudu,
       completingTudu,
       deletingTudu,
       toggleMenu,
       setToggleMenu,
       showingMenu,
+      openModal,
+      setOpenModal,
     }}>
       {children}
     </TuduContext.Provider>

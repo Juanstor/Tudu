@@ -1,11 +1,15 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function PlusIcon({ onAddTudu }) {
+function PlusIcon({ setOpenModal }) {
   return(
     <TuduIcon
       type="Plus"
-      onClick={onAddTudu}
+      onClick={
+        () => {
+          setOpenModal(state => !state);
+        }
+      }
     /> 
   );
 }

@@ -3,11 +3,13 @@ import { Header } from '../Header/Header.js';
 import { BackgroundImage } from '../BackgroundImage/BackgroundImage.js';
 import { Card } from '../Card/Card.js';
 import { TuduItem } from '../TuduItem/TuduItem.js';
-import { Prueba } from '../Prueba/Prueba.js';
+// import { Prueba } from '../Prueba/Prueba.js';
 import { EmptyTudu } from '../EmptyTudu/EmptyTudu.js';
 import { LoadingTudu } from '../LoadingTudu/LoadingTudu.js';
 import { ErrorTudu } from '../ErrorTudu/ErrorTudu.js';
 import { Menu } from '../Menu/Menu.js';
+import { Modal } from '../Modal/Modal.js';
+import { Form } from '../Form/Form.js';
 import { TuduContext } from '../Context/Context.js';
 
 function AppUI () {
@@ -23,6 +25,8 @@ function AppUI () {
     deletingTudu,
     toggleMenu,
     showingMenu,
+    openModal,
+    setOpenModal,
   } = React.useContext(TuduContext);
 
   return (
@@ -40,6 +44,7 @@ function AppUI () {
         completed={completedTudus} 
         total={totalTudus}
         percentage={progressPercentage}
+        setOpenModal={setOpenModal}
       >
         {loading && <LoadingTudu />}
         {error && <ErrorTudu />}
@@ -55,8 +60,17 @@ function AppUI () {
           />
         ))}
       </Card>
+
+
+
+      {openModal && (
+        <Modal>
+          <Form />
+        </Modal>
+      )}
       
-      <Prueba />
+      {/* <Prueba /> */}
+
     </>
   );
 
