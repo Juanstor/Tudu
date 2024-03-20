@@ -42,6 +42,7 @@ function TuduProvider({ children }) {
     newTudus.push({
       text,
       completed: false,
+      editing: false,
     });
     saveTudus(newTudus);
   };
@@ -53,6 +54,51 @@ function TuduProvider({ children }) {
       (n) => n.text === text
     );
     newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
+    saveTudus(newTudus);
+  };
+  
+
+
+
+
+  // EDITMODE → after click editIcon (this is for classNames, to put the TuduItem in z-index: 2, hide and show other icons)
+  const [editMode, setEditMode] = React.useState(false);
+  const toggleEditMode = () => {
+    setEditMode(!editMode);
+  } 
+  
+  // Open GrayBG
+  const [openGrayBG, setOpenGrayBG] = React.useState(false);
+  
+  //Editing a Tudu with editIcon
+  const editingTudu = (text) => {
+    const newTudus = [...tudus];
+    const tuduIndex = newTudus.findIndex(
+      (n) => n.text === text
+      );
+    // newTudus[tuduIndex].style.zIndex = '2';
+    // newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
+    
+    
+    
+    // Crearemos un casi modal, donde el tuduItem a modificar este en z2, un fongo transparente y gris en z1. el tutuItem tendra el espacio de ingresar texto y 2 iconos el chulo y X. 
+    // 1) CASI LISTO Crear un estado llamado editMode, donde true= ocultar iconos y pone fondo gris.
+    // 2) LISTO hacer la funcion onclick donde ponga true el estado editMode
+    // 3) crear iconos chulo y x
+    // 4) hacer la funcion onclick en chulo y x para poner false en el modo
+    // 5) en chulo, crear la funcion que modifica el tuduitem con el index y cambiar el texto, o reemplazarlo
+
+
+
+    console.log('has hecho click en el boton editar');
+    console.log(`y has dado click en el index ${tuduIndex}`);
+    console.log(`la propiedad editin es ${newTudus[tuduIndex].editing}`);
+    newTudus[tuduIndex].editing = !newTudus[tuduIndex].editing;
+    console.log(`AHORA ES ${newTudus[tuduIndex].editing}`);
+    console.log('Se va a ejecutar toggleEditMoode');
+    toggleEditMode();
+    console.log('se ejecuto toggleEditMoode');
+
     saveTudus(newTudus);
   };
   
@@ -77,12 +123,15 @@ function TuduProvider({ children }) {
       progressPercentage,
       addTudu,
       completingTudu,
+      editingTudu,
       deletingTudu,
       toggleMenu,
       setToggleMenu,
       showingMenu,
       openModal,
       setOpenModal,
+      openGrayBG,
+      setOpenGrayBG,
     }}>
       {children}
     </TuduContext.Provider>

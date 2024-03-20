@@ -99,3 +99,7 @@ ul {
   color: var(--gray4);
   text-decoration: line-through;
 }
+
+.hide {
+  display: none;
+}

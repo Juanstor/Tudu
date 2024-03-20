@@ -22,11 +22,14 @@ function AppUI () {
     totalTudus,
     progressPercentage,
     completingTudu,
+    editingTudu,
     deletingTudu,
     toggleMenu,
     showingMenu,
     openModal,
     setOpenModal,
+    openGrayBG,
+    setOpenGrayBG,
   } = React.useContext(TuduContext);
 
   return (
@@ -55,8 +58,11 @@ function AppUI () {
             Key={tudu.text}
             text={tudu.text}
             completed={tudu.completed}
+            editing={tudu.editing}
             onComplete={() => completingTudu(tudu.text)}
+            onEdit={() => editingTudu(tudu.text)}
             onDelete={() => deletingTudu(tudu.text)}
+            setOpenGrayBG={setOpenGrayBG}
           />
         ))}
       </Card>
@@ -67,6 +73,10 @@ function AppUI () {
         <Modal>
           <Form />
         </Modal>
+      )}
+
+      {openGrayBG && (
+        <Modal />
       )}
       
       {/* <Prueba /> */}

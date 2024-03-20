@@ -23,3 +23,7 @@
   text-decoration: line-through;
   color: var(--gray4);
 }
+
+.z2 {
+  z-index: 2;
+}

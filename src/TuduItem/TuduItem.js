@@ -7,9 +7,9 @@ import { DeleteIcon } from "../Icons/DeleteIcon";
 // https://react-icons.github.io/react-icons/icons/pi/
 
 
-function TuduItem({completed, text, onComplete, onDelete}) {
+function TuduItem({completed, editing, text, onComplete, onEdit, onDelete, setOpenGrayBG, }) {
   return (
-    <li className="TuduItem">
+    <li className={`TuduItem ${editing && 'z2'}`}>
 
       <CompletedIcon 
         completed={completed}
@@ -21,7 +21,8 @@ function TuduItem({completed, text, onComplete, onDelete}) {
       </p>
 
       <EditIcon 
-        // onComplete={onComplete}
+        onEdit={onEdit}
+        setOpenGrayBG={setOpenGrayBG}
       />
 
       <DeleteIcon
