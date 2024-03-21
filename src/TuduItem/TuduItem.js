@@ -9,7 +9,7 @@ import { DeleteIcon } from "../Icons/DeleteIcon";
 
 function TuduItem({completed, editing, text, onComplete, onEdit, onDelete, setOpenGrayBG, }) {
   return (
-    <li className={`TuduItem ${editing && 'z2'}`}>
+    <li className={`TuduItem ${editing ? 'z2' : ''}`}>
 
       <CompletedIcon 
         completed={completed}
@@ -20,14 +20,31 @@ function TuduItem({completed, editing, text, onComplete, onEdit, onDelete, setOp
         {text}
       </p>
 
-      <EditIcon 
-        onEdit={onEdit}
-        setOpenGrayBG={setOpenGrayBG}
-      />
+      <span className={` ${editing ? 'SIhide' : 'NOhide'}`}>
+        <EditIcon 
+          onEdit={onEdit}
+          setOpenGrayBG={setOpenGrayBG}
+        />
+      </span>
 
-      <DeleteIcon
-        onDelete={onDelete}
-      />
+      <span className={` ${editing ? 'SIhide' : 'NOhide'}`}>
+        <DeleteIcon
+          onDelete={onDelete}
+        />
+      </span>
+
+      {/* <span className={` ${editing ? 'SIhide' : 'NOhide'}`}>
+        <EditIcon 
+          onEdit={onEdit}
+          setOpenGrayBG={setOpenGrayBG}
+        />
+      </span>
+      
+      <span className={` ${editing ? 'SIhide' : 'NOhide'}`}>
+        <DeleteIcon
+          onDelete={onDelete}
+        />
+      </span> */}
       
     </li>
 

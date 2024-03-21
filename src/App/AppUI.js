@@ -3,7 +3,6 @@ import { Header } from '../Header/Header.js';
 import { BackgroundImage } from '../BackgroundImage/BackgroundImage.js';
 import { Card } from '../Card/Card.js';
 import { TuduItem } from '../TuduItem/TuduItem.js';
-// import { Prueba } from '../Prueba/Prueba.js';
 import { EmptyTudu } from '../EmptyTudu/EmptyTudu.js';
 import { LoadingTudu } from '../LoadingTudu/LoadingTudu.js';
 import { ErrorTudu } from '../ErrorTudu/ErrorTudu.js';
@@ -58,8 +57,8 @@ function AppUI () {
             Key={tudu.text}
             text={tudu.text}
             completed={tudu.completed}
-            editing={tudu.editing}
             onComplete={() => completingTudu(tudu.text)}
+            editing={tudu.editing}
             onEdit={() => editingTudu(tudu.text)}
             onDelete={() => deletingTudu(tudu.text)}
             setOpenGrayBG={setOpenGrayBG}
@@ -79,8 +78,6 @@ function AppUI () {
         <Modal />
       )}
       
-      {/* <Prueba /> */}
-
     </>
   );
 

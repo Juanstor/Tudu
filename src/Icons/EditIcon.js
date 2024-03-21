@@ -1,17 +1,12 @@
 import React from 'react';
 import { TuduIcon } from './TuduIcon';
 
-function EditIcon({ onEdit, setOpenGrayBG }) {
+function EditIcon({ onEdit, }) {
   
-  const handleClick = () => {
-    onEdit();
-    setOpenGrayBG(state => !state);
-  };
-
   return(
     <TuduIcon
       type="Edit"
-      onClick={handleClick}
+      onClick={onEdit}
     /> 
   );
 }

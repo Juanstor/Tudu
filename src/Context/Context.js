@@ -60,58 +60,65 @@ function TuduProvider({ children }) {
 
 
 
-
-  // EDITMODE → after click editIcon (this is for classNames, to put the TuduItem in z-index: 2, hide and show other icons)
-  const [editMode, setEditMode] = React.useState(false);
-  const toggleEditMode = () => {
-    setEditMode(!editMode);
-  } 
   
+  
+  
+  
+  
+  
+  //AQUI EMPIEZA EL DESORDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEN
   // Open GrayBG
   const [openGrayBG, setOpenGrayBG] = React.useState(false);
   
+    
   //Editing a Tudu with editIcon
-  const editingTudu = (text) => {
+  function editingTudu(text) {
+    setOpenGrayBG(state => !state);
     const newTudus = [...tudus];
     const tuduIndex = newTudus.findIndex(
       (n) => n.text === text
-      );
-    // newTudus[tuduIndex].style.zIndex = '2';
-    // newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
-    
-    
-    
-    // Crearemos un casi modal, donde el tuduItem a modificar este en z2, un fongo transparente y gris en z1. el tutuItem tendra el espacio de ingresar texto y 2 iconos el chulo y X. 
-    // 1) CASI LISTO Crear un estado llamado editMode, donde true= ocultar iconos y pone fondo gris.
-    // 2) LISTO hacer la funcion onclick donde ponga true el estado editMode
-    // 3) crear iconos chulo y x
-    // 4) hacer la funcion onclick en chulo y x para poner false en el modo
-    // 5) en chulo, crear la funcion que modifica el tuduitem con el index y cambiar el texto, o reemplazarlo
+    );
 
+    // newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
+    // Crearemos 2 botones chulo y X, los originales mostraran el fondo transparente, y desapareceran los 2 actuales segun la propiedad editing que esta en cada tuduItem entre true/false, tambien mostraran cuadro de texto para ingresar, un input, y los 2 nuevos botones devolveran todo a la normalidad.
+    // 1) crear los iconos
+    // 2) Funcion onclick para poner z2 el item, poner fondo y aparecer 2 nuevos iconos.
+    // 3) Funcion onclick para los 2 nuevos iconos y deje todo a la normalidad.
+    // 4) en chulo, crear la funcion que modifica el tuduitem con el index y cambiar el texto, o reemplazarlo
 
 
     console.log('has hecho click en el boton editar');
     console.log(`y has dado click en el index ${tuduIndex}`);
-    console.log(`la propiedad editin es ${newTudus[tuduIndex].editing}`);
+    console.log(`la propiedad editin es ${newTudus[tuduIndex].editing} en el index ${tuduIndex}`);
+    console.log('Se cambiara !editing');
+    
+
     newTudus[tuduIndex].editing = !newTudus[tuduIndex].editing;
+
+
     console.log(`AHORA ES ${newTudus[tuduIndex].editing}`);
-    console.log('Se va a ejecutar toggleEditMoode');
-    toggleEditMode();
-    console.log('se ejecuto toggleEditMoode');
+
 
     saveTudus(newTudus);
-  };
-  
+  }
+    
+  //AQUI TERMINA EL DESORDEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEN
+
+
+
+
+
+
   //Deleting a tudu with the icon X
   const deletingTudu = (text) => {
     const newTudus = [...tudus];
     const tuduIndex = newTudus.findIndex(
-        (n) => n.text === text
+      (n) => n.text === text
       );
-    newTudus.splice(tuduIndex, 1);
-    saveTudus(newTudus);
+      newTudus.splice(tuduIndex, 1);
+      saveTudus(newTudus);
   };
-
+      
 
   return (
     <TuduContext.Provider value={{
