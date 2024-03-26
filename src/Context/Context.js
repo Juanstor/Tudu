@@ -80,10 +80,11 @@ function TuduProvider({ children }) {
     );
 
     // newTudus[tuduIndex].completed = !newTudus[tuduIndex].completed;
+    
     // Crearemos 2 botones chulo y X, los originales mostraran el fondo transparente, y desapareceran los 2 actuales segun la propiedad editing que esta en cada tuduItem entre true/false, tambien mostraran cuadro de texto para ingresar, un input, y los 2 nuevos botones devolveran todo a la normalidad.
-    // 1) crear los iconos
-    // 2) Funcion onclick para poner z2 el item, poner fondo y aparecer 2 nuevos iconos.
-    // 3) Funcion onclick para los 2 nuevos iconos y deje todo a la normalidad.
+    // 1) ☻crear los iconos
+    // 2) ☻Funcion onclick para poner z2 el item, poner fondo y aparecer 2 nuevos iconos.
+    // 3) ☻Funcion onclick para los 2 nuevos iconos y deje todo a la normalidad.
     // 4) en chulo, crear la funcion que modifica el tuduitem con el index y cambiar el texto, o reemplazarlo
 
 
@@ -119,6 +120,32 @@ function TuduProvider({ children }) {
       saveTudus(newTudus);
   };
       
+  //CHECKING tudu, to confirm the edition
+  const checkingTudu = (text) => {
+    const newTudus = [...tudus];
+    const tuduIndex = newTudus.findIndex(
+      (n) => n.text === text
+      );
+
+      newTudus[tuduIndex].editing = !newTudus[tuduIndex].editing;
+
+      console.log(`Diste click en CheckIcon en el index ${tuduIndex}`)
+      console.log('Falta guardar el nuevo texto')
+      console.log('Falta el imput')
+      saveTudus(newTudus);
+      setOpenGrayBG(state => !state);
+    }
+
+  //CANCELING, to CANCEL the edition
+  const xingTudu = (text) => {
+    const newTudus = [...tudus];
+    const tuduIndex = newTudus.findIndex(
+      (n) => n.text === text
+      );
+      newTudus[tuduIndex].editing = !newTudus[tuduIndex].editing;
+      saveTudus(newTudus);
+      setOpenGrayBG(state => !state);
+    }
 
   return (
     <TuduContext.Provider value={{
@@ -132,6 +159,8 @@ function TuduProvider({ children }) {
       completingTudu,
       editingTudu,
       deletingTudu,
+      checkingTudu,
+      xingTudu,
       toggleMenu,
       setToggleMenu,
       showingMenu,

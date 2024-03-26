@@ -26,7 +26,7 @@ function Form() {
 
   return (
     <form onSubmit={onSubmit}>
-      {/* <lable>Escribe tu nuevo Tudu</lable> */}
+      <lable>Escribe tu nuevo Tudu</lable>
       <textarea 
         placeholder='Just do it!' 
         value={newTuduValue}

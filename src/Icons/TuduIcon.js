@@ -5,6 +5,8 @@ import { ReactComponent as EditSVG } from './EditIcon.svg';
 import { ReactComponent as DeleteSVG } from './DeleteIcon.svg';
 import { ReactComponent as MenuSVG } from './MenuIcon.svg';
 import { ReactComponent as PlusSVG } from './PlusIcon.svg';
+import { ReactComponent as CheckSVG } from './CheckIcon.svg';
+import { ReactComponent as XSVG } from './XIcon.svg';
 import './TuduIcon.css';
 
 const iconTypes = { 
@@ -15,6 +17,8 @@ const iconTypes = {
   "Incompleted": <IncompletedSVG />,
   "Edit": <EditSVG />,
   "Delete": <DeleteSVG />,
+  "Check": <CheckSVG />,
+  "X": <XSVG />,
 }
 
 function TuduIcon({ type, onClick }) {

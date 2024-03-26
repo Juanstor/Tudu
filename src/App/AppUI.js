@@ -23,6 +23,8 @@ function AppUI () {
     completingTudu,
     editingTudu,
     deletingTudu,
+    checkingTudu,
+    xingTudu,
     toggleMenu,
     showingMenu,
     openModal,
@@ -61,7 +63,10 @@ function AppUI () {
             editing={tudu.editing}
             onEdit={() => editingTudu(tudu.text)}
             onDelete={() => deletingTudu(tudu.text)}
+            onCheck={() => checkingTudu(tudu.text)}
+            onX={() => xingTudu(tudu.text)}
             setOpenGrayBG={setOpenGrayBG}
+
           />
         ))}
       </Card>
